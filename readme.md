@@ -7,8 +7,8 @@ A book sharing website made with Laravel. A static version of the website with s
 Clone this repository and `cd` into it.
 
 ```
-git clone https://github.com/pedrominicz/freedom
-cd freedom
+$ git clone https://github.com/pedrominicz/freedom
+$ cd freedom
 ```
 
 Install `composer` dependencies.
@@ -63,13 +63,19 @@ DB_PASSWORD=root
 Generate app encryption key.
 
 ```
-php artisan key:generate
+$ php artisan key:generate
 ```
 
 Migrate the database.
 
 ```
-php artisan migrate
+$ php artisan migrate
+```
+
+Link storage.
+
+```
+$ php artisan storage:link
 ```
 
 And, finally, start the website.
