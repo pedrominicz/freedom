@@ -12,7 +12,7 @@
       @if($book->cover)
         <img alt="{{ $book->title }}" src="/storage/{{ $book->cover }}" class="rounded img-thumbnail" />
       @else
-        <img alt="{{ $book->title }}" src="https://i.imgur.com/ow6gafs.png" class="rounded img-thumbnail" />
+        <img alt="{{ $book->title }}" src="/storage/nocover.png" class="rounded img-thumbnail" />
       @endif
 
     </div>

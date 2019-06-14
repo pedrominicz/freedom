@@ -31,7 +31,7 @@
             @if($book->cover)
               <img alt="{{ $book->title }}" src="/storage/{{ $book->cover }}" class="img-fluid" />
             @else
-              <img alt="{{ $book->title }}" src="https://i.imgur.com/ow6gafs.png" class="img-fluid" />
+              <img alt="{{ $book->title }}" src="/storage/nocover.png" class="img-fluid" />
             @endif
             <div class="card-body text-center py-1">
               <p class="card-text">{{ $book->title }}</p>
