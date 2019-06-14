@@ -110,3 +110,22 @@ MariaDB [freedom]> Bye
 ```
 
 You will now be able to add books to the website by visiting `localhost:8000/a`.
+
+If you want to delete the site just `rm -rf freedom` and don't forget to drop the database.
+
+```
+$ mysql -u root -p
+Enter password: 
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 97
+Server version: 10.3.15-MariaDB Source distribution
+
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+MariaDB [(none)]> DROP DATABASE freedom;
+Query OK, 6 rows affected (1.413 sec)
+
+MariaDB [(none)]> Bye
+```

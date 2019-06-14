@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use Freedom\Book;
 use Freedom\User;
+use Freedom\Comment;
 use Freedom\Favorite;
 
 class BookController extends Controller
@@ -180,6 +181,7 @@ class BookController extends Controller
     $book->delete();
 
     Favorite::where('book_id', $request->id)->delete();
+    Comment::where('book_id', $request->id)->delete();
 
     return redirect('/');
   }
