@@ -2,9 +2,9 @@
 
 A book sharing website made with Laravel. A static version of the website with some classic Japanese novels can be found [here](https://pedrominicz.github.io/freedom/index.html).
 
-The site uses four tables: `books`, `users`, `favorites`, and `comments`. Each book has a `file` column which points to the book file stored in `storage/app/public/` and an optional cover image. The book file could be an EPUB, a PDF, or anything, really. `users` is the default Laravel users table with an `is_admin` column added. Each favorite just holds a `user_id` and a `book_id`. Comments are similar but have a `body` column.
+The site uses four tables: [`books`](database/migrations/2019_06_01_001639_create_books_table.php), [`users`](database/migrations/2019_06_01_192225_create_users_table.php), [`favorites`](database/migrations/2019_06_01_231928_create_favorites_table.php), and [`comments`](database/migrations/2019_06_14_000006_create_comments_table.php). Each book has a `file` column which points to the book file stored in `storage/app/public/` and an optional cover image. The book file could be an EPUB, a PDF, or anything, really. `users` is the default Laravel users table with an `is_admin` column added. Each favorite just holds a `user_id` and a `book_id`. Comments are similar but have a `body` column.
 
-The site has four controllers: `BookController`, `CommentController`, `FavoriteController`, and `HomeController`. Of these `BookController` is the biggest, but still pretty straight forward.
+The site has four controllers: [`BookController`](app/Http/Controllers/BookController.php), [`CommentController`](app/Http/Controllers/CommentController.php), [`FavoriteController`](app/Http/Controllers/FavoriteController.php), and [`HomeController`](app/Http/Controllers/HomeController.php). Of these `BookController` is the biggest, but still pretty straight forward.
 
 ## Running the website
 
