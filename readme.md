@@ -2,6 +2,10 @@
 
 A book sharing website made with Laravel. A static version of the website with some classic Japanese novels can be found [here](https://pedrominicz.github.io/freedom/index.html).
 
+The site uses four tables: `books`, `users`, `favorites`, and `comments`. Each book has a `file` column which points to the book file stored in `storage/app/public/` and an optional cover image. The book file could be an EPUB, a PDF, or anything, really. `users` is the default Laravel users table with an `is_admin` column added. Each favorite just holds a `user_id` and a `book_id`. Comments are similar but have a `body` column.
+
+The site has four controllers: `BookController`, `CommentController`, `FavoriteController`, and `HomeController`. Of these `BookController` is the biggest, but still pretty straight forward.
+
 ## Running the website
 
 Clone this repository and `cd` into it.
@@ -87,24 +91,22 @@ php artisan serve
 You can now create an account on the website by visiting `localhost:8000/register`. After creating the account you can make it an administrator.
 
 ```
-$ mysql -u root -p
+$ mysql -u root -p freedom
 Enter password:
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
 Welcome to the MariaDB monitor.  Commands end with ; or \g.
-Your MariaDB connection id is 15
+Your MariaDB connection id is 23
 Server version: 10.3.15-MariaDB Source distribution
 
 Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
 
 Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
 
-MariaDB [(none)]> USE freedom;
-Reading table information for completion of table and column names
-You can turn off this feature to get a quicker startup with -A
-
-Database changed
 MariaDB [freedom]> UPDATE users SET is_admin=1 WHERE id=1;
-Query OK, 1 row affected (0.147 sec)
-Rows matched: 1  Changed: 1  Warnings: 0
+Query OK, 0 rows affected (0.000 sec)
+Rows matched: 1  Changed: 0  Warnings: 0
 
 MariaDB [freedom]> Bye
 ```
