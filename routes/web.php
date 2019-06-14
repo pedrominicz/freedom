@@ -12,14 +12,14 @@
 */
 
 // Home
-Route::get('/', 'BookController@home');
+Route::get('/', 'HomeController@home_get');
 Route::redirect('/home', '/');
 
 // View Book
 Route::get('/b/{id}', 'BookController@book_get');
 
 // Search Book
-Route::get('/s', 'BookController@search_get');
+Route::get('/s', 'HomeController@search_get');
 
 // Comments
 Route::post('/c/{id}', 'CommentController@add_post');

@@ -11,14 +11,14 @@
       <ul class="navbar-nav mr-auto" style="float: none;">
 
         <li class="nav-item">
-          <div class="form-inline">
+          <form method="GET" action="/s" class="form-inline">
             <div class="input-group mx-auto">
-              <input minlength="3" maxlength="20" class="form-control" placeholder="Search">
+              <input id="query" name="q" minlength="3" maxlength="20" class="form-control" type="search" value="{{ request()->input('q') }}" placeholder="Search">
               <div class="input-group-append">
-                <button class="btn btn-secondary"><i class="fa fa-search"></i></button>
+                <button class="btn btn-secondary" type="submit"><i class="fa fa-search"></i></button>
               </div>
             </div>
-          </div>
+          </form>
         </li>
 
         <li class="nav-item inactive my-auto">

@@ -40,28 +40,6 @@ class BookController extends Controller
     ]);
   }
 
-  public function home() {
-    $books = Book::all();
-
-    return view('home', [
-      'books' => $books
-    ]);
-  }
-
-  public function search_get(Request $request) {
-    $query = $request->q;
-
-    if(!$query) {
-      return redirect('/');
-    }
-
-    $books = Book::where('title', 'like', "%$query%")->get();
-
-    return view('search', [
-      'books' => $books
-    ]);
-  }
-
   /**********************/
   /* admin GET requests */
   /**********************/
