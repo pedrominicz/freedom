@@ -21,6 +21,10 @@ Route::get('/b/{id}', 'BookController@book_get');
 // Search Book
 Route::get('/s', 'BookController@search_get');
 
+// Comments
+Route::post('/c/{id}', 'CommentController@add_post');
+Route::get('/c/{id}', function() { abort(404); });
+
 // Favorites
 Route::get('/f', 'FavoriteController@favorite_get');
 Route::post('/f/{id}', 'FavoriteController@favorite_post');

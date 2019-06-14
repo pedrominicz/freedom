@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use Freedom\Book;
+use Freedom\User;
 use Freedom\Favorite;
 
 class BookController extends Controller
@@ -22,9 +23,19 @@ class BookController extends Controller
       $favorite = null;
     }
 
+    $comments = array();
+
+    foreach($book->comments as $comment) {
+      array_push($comments, [
+        'body' => $comment->body,
+        'commenter' => User::findOrFail($comment->user_id)->name,
+      ]);
+    }
+
     return view('book', [
       'book' => $book,
       'favorite' => $favorite,
+      'comments' => $comments,
     ]);
   }
 

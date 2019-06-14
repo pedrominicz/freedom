@@ -70,4 +70,31 @@
 
   </div>
 
+  <div class="row mt-4">
+
+    <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2">
+
+      <ul class="list-group">
+      @foreach($comments as $comment)
+        <li class="list-group-item mb-1">
+          <strong> {{ $comment['commenter'] }}: </strong>&nbsp
+          {{ $comment['body'] }}
+        </li>
+      @endforeach
+      </ul>
+
+      <form method="POST" action="/c/{{ $book->id }}">
+        @csrf
+        <div class="input-group mx-auto">
+          <input minlength="20" maxlength="200" id="body" type="text" name="body" placeholder="Your comment here." class="form-control">
+          <div class="input-group-append">
+            <button type="submit" style="min-width: 120px;" class="btn btn-outline-primary"> <i class="far fa-comment"></i> Comment </button>
+          </div>
+        </div>
+      </form>
+
+    </div>
+
+  </div>
+
 @endsection
