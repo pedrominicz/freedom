@@ -85,7 +85,7 @@ $ php artisan storage:link
 And, finally, start the website.
 
 ```
-php artisan serve
+$ php artisan serve
 ```
 
 You can now create an account on the website by visiting `localhost:8000/register`. After creating the account you can make it an administrator.
@@ -105,8 +105,8 @@ Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
 Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
 
 MariaDB [freedom]> UPDATE users SET is_admin=1 WHERE id=1;
-Query OK, 0 rows affected (0.000 sec)
-Rows matched: 1  Changed: 0  Warnings: 0
+Query OK, 1 row affected (0.059 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
 
 MariaDB [freedom]> Bye
 ```
